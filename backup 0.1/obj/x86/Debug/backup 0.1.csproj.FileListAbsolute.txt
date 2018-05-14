@@ -1,0 +1,4 @@
+c:\users\smile\documents\visual studio 2010\Projects\backup 0.1\backup 0.1\bin\Debug\backup 0.1.exe
+c:\users\smile\documents\visual studio 2010\Projects\backup 0.1\backup 0.1\bin\Debug\backup 0.1.pdb
+c:\users\smile\documents\visual studio 2010\Projects\backup 0.1\backup 0.1\obj\x86\Debug\backup 0.1.exe
+c:\users\smile\documents\visual studio 2010\Projects\backup 0.1\backup 0.1\obj\x86\Debug\backup 0.1.pdb
