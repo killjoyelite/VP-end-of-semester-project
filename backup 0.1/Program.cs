@@ -7,7 +7,6 @@ namespace backup_0._1
 {
     class Program
     {
-        public int fileCount =0;
         public static string driveList()
         {
             //IList<String> DriveList = new List<String>();
@@ -32,14 +31,11 @@ namespace backup_0._1
         {
             DirectoryInfo diSource = new DirectoryInfo(sourceDirectory);
             DirectoryInfo diTarget = new DirectoryInfo(targetDirectory);
-
             CopyAll(diSource, diTarget);
         }
-
         public static void CopyAll(DirectoryInfo source, DirectoryInfo target)
-        {      
+        {
             Directory.CreateDirectory(target.FullName);
-
             // Copy each file into the new directory.
             foreach (FileInfo fi in source.GetFiles())
             {
@@ -58,10 +54,9 @@ namespace backup_0._1
         {
             string sourceDirectory = driveList();
             string targetDirectory = @"C:\Users\SMile\Desktop\Auto backup";
-
             Copy(sourceDirectory, targetDirectory);
-            
-            
+            Console.WriteLine("Total files copied: \n");
+            Console.WriteLine();
         }
     }
 }
