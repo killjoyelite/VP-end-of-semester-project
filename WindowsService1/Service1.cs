@@ -7,7 +7,7 @@ using System.Linq;
 using System.ServiceProcess;
 using System.Text;
 using System.IO;
-
+using System.Globalization;
 
 namespace WindowsService1
 {
@@ -70,32 +70,41 @@ namespace WindowsService1
         protected override void OnStart(string[] args)
         {
             DateTime dt = DateTime.Now;
-            
-            string startPath = @"C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\WindowsService1\bin\Release\OnStart.txt";
-            string errorPath = @"C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\WindowsService1\bin\Release\ErrorLog.txt";
+            string cultureNames = "en-GB";
+            var culture = new CultureInfo(cultureNames);
+            string startPath = @"C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\VP-end-of-semester-project\WindowsService1\bin\Release\OnStart.txt";
+            string errorPath = @"C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\VP-end-of-semester-project\WindowsService1\bin\Release\ErrorLog.txt";
             
             string sourceDirectory = driveList();
             string targetDirectory = @"C:\Users\SMile\Desktop\Auto backup";
 
-            System.IO.File.Create(AppDomain.CurrentDomain.BaseDirectory + "OnStart.txt");
-            using (StreamWriter sw = File.AppendText(startPath))
+            //System.IO.File.Create(AppDomain.CurrentDomain.BaseDirectory + "OnStart.txt");
+            try
             {
-                sw.WriteLine(dt + " - Backup Service Started");
-                sw.WriteLine("\n");
+                using (StreamWriter sw = File.AppendText(startPath))
+                {
+                    sw.WriteLine(dt.ToString(culture) + " - Backup Service Started");
+                    sw.WriteLine("\n");
+                }
             }
-
-            //File.AppendAllText(@"C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\WindowsService1\bin\Release\OnStart.txt", "The service has started");
-            
+            catch (Exception e)
+            {
+                using (StreamWriter sw = File.AppendText(errorPath))
+                {
+                    sw.WriteLine(dt.ToString(culture) + " - " + e.Message);
+                    sw.WriteLine("\n");
+                }
+            }
+                      
             try
             {
                 Copy(sourceDirectory, targetDirectory);
             }
             catch (Exception e)
             {
-                
                 using (StreamWriter sw = File.AppendText(errorPath))
                 {
-                    sw.WriteLine(dt + " - " + e.Message);
+                    sw.WriteLine(dt.ToString(culture) + " - " + e.Message);
                     sw.WriteLine("\n");
                 }
                 
@@ -108,13 +117,17 @@ namespace WindowsService1
 
         protected override void OnStop()
         {
-            string stopPath = @"C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\WindowsService1\bin\Release\OnStop.txt";
-            DateTime dt = DateTime.Now;
+            string stopPath = @"C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\VP-end-of-semester-project\WindowsService1\bin\Release\OnStop.txt";
+            
+            DateTime localDate = DateTime.Now;
+            
 
-            System.IO.File.Create(AppDomain.CurrentDomain.BaseDirectory + "OnStop.txt");
+            string cultureNames =  "en-GB";
+            var culture = new CultureInfo(cultureNames);
+            //System.IO.File.Create(AppDomain.CurrentDomain.BaseDirectory + "OnStop.txt");
             using (StreamWriter sw = File.AppendText(stopPath))
             {
-                sw.WriteLine(dt + " - Backup Service Stopped");
+                sw.WriteLine(localDate.ToString(culture) + " - Backup Service Stopped");
                 sw.WriteLine("\n");
             }
         }

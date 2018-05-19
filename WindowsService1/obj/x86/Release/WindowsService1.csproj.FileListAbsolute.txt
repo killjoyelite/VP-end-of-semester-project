@@ -4,3 +4,9 @@ c:\users\smile\documents\visual studio 2010\Projects\WindowsService1\WindowsServ
 c:\users\smile\documents\visual studio 2010\Projects\WindowsService1\WindowsService1\obj\x86\Release\WindowsService1.pdb
 c:\users\smile\documents\visual studio 2010\Projects\WindowsService1\WindowsService1\obj\x86\Release\WindowsService1.ProjectInstaller.resources
 c:\users\smile\documents\visual studio 2010\Projects\WindowsService1\WindowsService1\obj\x86\Release\WindowsService1.csproj.GenerateResource.Cache
+C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\VP-end-of-semester-project\WindowsService1\obj\x86\Release\WindowsService1.exe
+C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\VP-end-of-semester-project\WindowsService1\obj\x86\Release\WindowsService1.pdb
+C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\VP-end-of-semester-project\WindowsService1\bin\Release\WindowsService1.exe
+C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\VP-end-of-semester-project\WindowsService1\bin\Release\WindowsService1.pdb
+C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\VP-end-of-semester-project\WindowsService1\obj\x86\Release\WindowsService1.ProjectInstaller.resources
+C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\VP-end-of-semester-project\WindowsService1\obj\x86\Release\WindowsService1.csproj.GenerateResource.Cache
