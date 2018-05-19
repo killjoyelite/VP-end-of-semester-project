@@ -1,0 +1,43 @@
+﻿Installing assembly 'C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\WindowsService1\bin\Release\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\WindowsService1\bin\Release\WindowsService1.InstallLog
+   assemblypath = C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\WindowsService1\bin\Release\WindowsService1.exe
+Installing service YT windows test...
+Service YT windows test has been successfully installed.
+Creating EventLog source YT windows test in log Application...
+Committing assembly 'C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\WindowsService1\bin\Release\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\WindowsService1\bin\Release\WindowsService1.InstallLog
+   assemblypath = C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\WindowsService1\bin\Release\WindowsService1.exe
+Uninstalling assembly 'C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\WindowsService1\bin\Release\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\WindowsService1\bin\Release\WindowsService1.InstallLog
+   assemblypath = C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\WindowsService1\bin\Release\WindowsService1.exe
+Removing EventLog source YT windows test.
+Service YT windows test is being removed from the system...
+Service YT windows test was successfully removed from the system.
+Installing assembly 'C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\WindowsService1\bin\Release\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\WindowsService1\bin\Release\WindowsService1.InstallLog
+   assemblypath = C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\WindowsService1\bin\Release\WindowsService1.exe
+Installing service YT windows test...
+Service YT windows test has been successfully installed.
+Creating EventLog source YT windows test in log Application...
+Committing assembly 'C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\WindowsService1\bin\Release\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\WindowsService1\bin\Release\WindowsService1.InstallLog
+   assemblypath = C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\WindowsService1\bin\Release\WindowsService1.exe
+Uninstalling assembly 'C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\WindowsService1\bin\Release\WindowsService1.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\WindowsService1\bin\Release\WindowsService1.InstallLog
+   assemblypath = C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\WindowsService1\bin\Release\WindowsService1.exe
+Removing EventLog source YT windows test.
+Service YT windows test is being removed from the system...
+Service YT windows test was successfully removed from the system.
+Attempt to stop service YT windows test.

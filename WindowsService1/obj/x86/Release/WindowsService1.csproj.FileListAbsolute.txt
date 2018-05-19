@@ -1,0 +1,6 @@
+c:\users\smile\documents\visual studio 2010\Projects\WindowsService1\WindowsService1\bin\Release\WindowsService1.exe
+c:\users\smile\documents\visual studio 2010\Projects\WindowsService1\WindowsService1\bin\Release\WindowsService1.pdb
+c:\users\smile\documents\visual studio 2010\Projects\WindowsService1\WindowsService1\obj\x86\Release\WindowsService1.exe
+c:\users\smile\documents\visual studio 2010\Projects\WindowsService1\WindowsService1\obj\x86\Release\WindowsService1.pdb
+c:\users\smile\documents\visual studio 2010\Projects\WindowsService1\WindowsService1\obj\x86\Release\WindowsService1.ProjectInstaller.resources
+c:\users\smile\documents\visual studio 2010\Projects\WindowsService1\WindowsService1\obj\x86\Release\WindowsService1.csproj.GenerateResource.Cache
