@@ -51,40 +51,55 @@ namespace WindowsService1
 
         public static void CopyAll(DirectoryInfo source, DirectoryInfo target)
         {
+            DateTime dt = DateTime.Now;
+            var culture = new CultureInfo("en-GB");
+            string transferLogPath = @"C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\VP-end-of-semester-project\WindowsService1\bin\Release\TransferLog.txt";
             Directory.CreateDirectory(target.FullName);
             // Copy each file into the new directory.
-            foreach (FileInfo fi in source.GetFiles())
+            //Console.WriteLine(@"Copying {0} --> {1}", fi.FullName, target.FullName);
+           
+            try
             {
-                Console.WriteLine(@"Copying {0} --> {1}", fi.FullName, target.FullName);
-                fi.CopyTo(Path.Combine(target.FullName, fi.Name), true);
+                using (StreamWriter sw = File.AppendText(transferLogPath))
+                {
+                    foreach (FileInfo fi in source.GetFiles())
+                    {
+                        sw.WriteLine(@"Copying {0} --> {1}", fi.FullName, target.FullName);
+                        fi.CopyTo(Path.Combine(target.FullName, fi.Name), true);
+                    }
+                    //sw.WriteLine("---------------------" + dt.ToString(culture) + "---------------------\n");
+                }
             }
-
+            catch (Exception)
+            {
+                throw;
+            }
             // Copy each subdirectory using recursion.
             foreach (DirectoryInfo diSourceSubDir in source.GetDirectories())
             {
                 DirectoryInfo nextTargetSubDir = target.CreateSubdirectory(diSourceSubDir.Name);
                 CopyAll(diSourceSubDir, nextTargetSubDir);
             }
+            
         }
 
         protected override void OnStart(string[] args)
         {
             DateTime dt = DateTime.Now;
-            string cultureNames = "en-GB";
-            var culture = new CultureInfo(cultureNames);
+            //string cultureNames = "en-GB";
+            var culture = new CultureInfo("en-GB");
             string startPath = @"C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\VP-end-of-semester-project\WindowsService1\bin\Release\OnStart.txt";
             string errorPath = @"C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\VP-end-of-semester-project\WindowsService1\bin\Release\ErrorLog.txt";
-            
             string sourceDirectory = driveList();
             string targetDirectory = @"C:\Users\SMile\Desktop\Auto backup";
-
             //System.IO.File.Create(AppDomain.CurrentDomain.BaseDirectory + "OnStart.txt");
+
             try
             {
                 using (StreamWriter sw = File.AppendText(startPath))
                 {
-                    sw.WriteLine(dt.ToString(culture) + " - Backup Service Started");
-                    sw.WriteLine("\n");
+                    sw.WriteLine(dt.ToString(culture) + " - Backup Service Started\n");
+                    //sw.WriteLine("\n");
                 }
             }
             catch (Exception e)
@@ -95,7 +110,7 @@ namespace WindowsService1
                     sw.WriteLine("\n");
                 }
             }
-                      
+
             try
             {
                 Copy(sourceDirectory, targetDirectory);
@@ -104,31 +119,34 @@ namespace WindowsService1
             {
                 using (StreamWriter sw = File.AppendText(errorPath))
                 {
-                    sw.WriteLine(dt.ToString(culture) + " - " + e.Message);
-                    sw.WriteLine("\n");
+                    sw.WriteLine(dt.ToString(culture) + " - " + e.Message + "\n");
+                    //sw.WriteLine("\n");
                 }
                 
                 //File.AppendAllText(@"C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\WindowsService1\bin\Release\ErrorLog.txt", "Device not found");
             }
-            
-            Console.WriteLine("Total files copied: \n");
-            Console.WriteLine();
+            //Console.WriteLine("Total files copied: \n");
+            //Console.WriteLine();
         }
 
         protected override void OnStop()
         {
             string stopPath = @"C:\Users\SMile\Documents\Visual Studio 2010\Projects\WindowsService1\VP-end-of-semester-project\WindowsService1\bin\Release\OnStop.txt";
-            
             DateTime localDate = DateTime.Now;
-            
-
-            string cultureNames =  "en-GB";
-            var culture = new CultureInfo(cultureNames);
+            //string cultureNames =  "en-GB";
+            var culture = new CultureInfo("en-GB");
             //System.IO.File.Create(AppDomain.CurrentDomain.BaseDirectory + "OnStop.txt");
-            using (StreamWriter sw = File.AppendText(stopPath))
+            try
             {
-                sw.WriteLine(localDate.ToString(culture) + " - Backup Service Stopped");
-                sw.WriteLine("\n");
+                using (StreamWriter sw = File.AppendText(stopPath))
+                {
+                    sw.WriteLine(localDate.ToString(culture) + " - Backup Service Stopped\n");
+                    //sw.WriteLine("\n");
+                }
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
     }
