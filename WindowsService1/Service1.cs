@@ -185,7 +185,7 @@ namespace WindowsService1
             ////Console.WriteLine("Total files copied: \n");
             ////Console.WriteLine();
             //OnStart(null);
-            using (StreamWriter sw = File.AppendText("C:/Users/SMile/Desktop/BackupLog/ServiceStartLog.txt"))
+            using (StreamWriter sw = File.AppendText("C:/Users/SMile/Desktop/BackupLog.txt"))
             {
                 sw.WriteLine(dt.ToString(culture) + " - " + "Backup Service Started\n");
                 sw.WriteLine("\n");
@@ -203,7 +203,7 @@ namespace WindowsService1
             { // give the thread 3 seconds to stop
                 _thread.Abort();
             }
-            using (StreamWriter sw = File.AppendText("C:/Users/SMile/Desktop/BackupLog/ServiceStopLog.txt"))
+            using (StreamWriter sw = File.AppendText("C:/Users/SMile/Desktop/BackupLog.txt"))
             {
                 sw.WriteLine(dt.ToString(culture) + " - " + "Backup Service Stopped\n");
                 sw.WriteLine("\n");
